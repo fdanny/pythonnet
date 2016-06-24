@@ -110,10 +110,12 @@ namespace Python.Runtime
             type = AssemblyManager.LookupType(qname);
             if (type != null)
             {
+                /* Danny changed
                 if (!type.IsPublic)
                 {
                     return null;
                 }
+                */
                 c = ClassManager.GetClass(type);
                 StoreAttribute(name, c);
                 return (ManagedType)c;
